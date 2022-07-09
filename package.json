@@ -1,0 +1,60 @@
+{
+	"name": "@vangware/predicates",
+	"description": "🧐 Predicate util functions",
+	"version": "1.0.0",
+	"author": {
+		"email": "hello@vangware.com",
+		"name": "Vangware",
+		"url": "https://vangware.com"
+	},
+	"bugs": "https://github.com/vangware/predicates/issues",
+	"devDependencies": {
+		"@evilmartians/lefthook": "^1.0.5",
+		"@types/node": "^18.6.3",
+		"@vangware/configs": "^3.1.2",
+		"@vangware/test": "^9.1.22",
+		"@vangware/types": "^3.0.2",
+		"c8": "^7.12.0",
+		"eslint": "^8.21.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.7.1",
+		"rimraf": "^3.0.2",
+		"stylelint": "^14.9.1",
+		"ts-node": "^10.9.1",
+		"typedoc": "^0.23.10",
+		"typescript": "^4.7.4"
+	},
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"files": [
+		"dist"
+	],
+	"homepage": "https://github.com/vangware/predicates#readme",
+	"keywords": [
+		"predicates",
+		"typescript",
+		"utils",
+		"vangware"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vangware/predicates.git"
+	},
+	"scripts": {
+		"clean": "rimraf ./dist",
+		"compile": "tsc --project ./tsconfig.dist.json",
+		"document": "typedoc",
+		"git:pre-push": "run-s --print-label clean pre-compile lint test document",
+		"lint": "eslint {src,tests} --ext .ts",
+		"lint:fix": "eslint {src,tests} --ext .ts --fix",
+		"pre-compile": "tsc --noEmit --project tsconfig.dist.json",
+		"prepare": "lefthook install",
+		"prepublishOnly": "run-s --print-label clean compile prettify",
+		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
+		"test": "NODE_OPTIONS='--loader ts-node/esm' c8 test"
+	},
+	"type": "module",
+	"types": "./dist/index.d.ts"
+}
