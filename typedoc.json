@@ -1,0 +1,7 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"cname": "predicates.vangware.com",
+	"extends": ["./node_modules/@vangware/configs/typedoc.json"],
+	"entryPoints": ["./src"],
+	"name": "@vangware/predicates"
+}
