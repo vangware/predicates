@@ -1,4 +1,4 @@
-<img alt="Vangware's Predicates" src="./logo.svg" height="192" />
+<img alt="Vangware's Predicates" src="./logo.svg" height="128" />
 
 ![Build Status][build-status-badge] ![Coverage][coverage-badge]
 ![License][license-badge] ![NPM Version][npm-version-badge]
@@ -70,17 +70,18 @@ Test coverage can be found [HERE][coverage].
 <!-- Reference -->
 
 [build-status-badge]:
-	https://img.shields.io/github/workflow/status/vangware/predicates/Test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/predicates/actions
+	https://img.shields.io/github/workflow/status/vangware/predicates/Test%20&%20Coverage.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/predicates/actions
 [changelog]: https://github.com/vangware/predicates/blob/main/CHANGELOG.md
 [coverage-badge]:
-	https://img.shields.io/coveralls/github/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://coveralls.io/github/vangware/predicates
+	https://img.shields.io/coveralls/github/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/predicates
 [coverage]: https://coveralls.io/github/vangware/predicates
-[documentation]: https://test.vangware.com
+[deno]: https://deno.land/
+[documentation]: https://predicates.vangware.com
 [license-badge]:
-	https://img.shields.io/npm/l/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/predicates/blob/main/LICENSE
+	https://img.shields.io/npm/l/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/predicates/blob/main/LICENSE
 [npm-version-badge]:
-	https://img.shields.io/npm/v/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/predicates
+	https://img.shields.io/npm/v/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://npm.im/@vangware/predicates
 [open-issues-badge]:
-	https://img.shields.io/github/issues/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/predicates/issues
+	https://img.shields.io/github/issues/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/predicates/issues
 [typedoc]: https://typedoc.org/
 [vscode]: https://code.visualstudio.com/
