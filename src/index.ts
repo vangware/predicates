@@ -1,3 +1,4 @@
+export { between } from "./between.js";
 export { has } from "./has.js";
 export { hasAsyncIteratorSymbol } from "./hasAsyncIteratorSymbol.js";
 export { hasIteratorSymbol } from "./hasIteratorSymbol.js";
@@ -27,3 +28,4 @@ export { isSymbol } from "./isSymbol.js";
 export { isTruthy } from "./isTruthy.js";
 export { isType } from "./isType.js";
 export { isUndefined } from "./isUndefined.js";
+export { match } from "./match.js";

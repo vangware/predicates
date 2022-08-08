@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 1.1.0
+
+-   :sparkles: add `between` function.
+-   :sparkles: add `match` function.
+-   :arrow_up: dependency upgrade.
+
 ## 1.0.2
 
 -   :truck: Move `@vangware/types` from `devDependencies` to `dependencies`.
