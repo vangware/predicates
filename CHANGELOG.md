@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 1.1.3
+
+-   :arrow_up: dependency upgrade.
+-   :building_construction: change `isIterable` to check for `Symbol.iterator`
+    being a function.
+-   :building_construction: change `isAsynchronousIterable` to check for
+    `Symbol.asyncIterator` being a function.
+
 ## 1.1.2
 
 -   :arrow_up: dependency upgrade.

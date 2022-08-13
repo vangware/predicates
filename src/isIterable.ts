@@ -1,4 +1,5 @@
 import { hasIteratorSymbol } from "./hasIteratorSymbol.js";
+import { isFunction } from "./isFunction.js";
 import { isObject } from "./isObject.js";
 
 /**
@@ -15,4 +16,7 @@ import { isObject } from "./isObject.js";
  */
 export const isIterable = <Actual, Item>(
 	input: Actual | Iterable<Item>,
-): input is Iterable<Item> => isObject(input) && hasIteratorSymbol(input);
+): input is Iterable<Item> =>
+	isObject(input) &&
+	hasIteratorSymbol(input) &&
+	isFunction(input[Symbol.iterator]);

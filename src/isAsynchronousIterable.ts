@@ -1,6 +1,7 @@
 import type { AsynchronousIterable } from "@vangware/types";
 import { hasAsyncIteratorSymbol } from "./hasAsyncIteratorSymbol.js";
-import { hasIteratorSymbol } from "./hasIteratorSymbol.js";
+import { isFunction } from "./isFunction.js";
+import { isIterable } from "./isIterable.js";
 import { isObject } from "./isObject.js";
 
 /**
@@ -18,5 +19,7 @@ import { isObject } from "./isObject.js";
 export const isAsynchronousIterable = <Actual, Item>(
 	input: Actual | AsynchronousIterable<Item>,
 ): input is AsynchronousIterable<Item> =>
-	isObject(input) &&
-	(hasIteratorSymbol(input) || hasAsyncIteratorSymbol(input));
+	isIterable(input) ||
+	(isObject(input) &&
+		hasAsyncIteratorSymbol(input) &&
+		isFunction(input[Symbol.asyncIterator]));
