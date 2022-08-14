@@ -1,11 +1,13 @@
 import type { AsynchronousIterable } from "@vangware/types";
-import { hasAsyncIteratorSymbol } from "./hasAsyncIteratorSymbol.js";
-import { isFunction } from "./isFunction.js";
+import { isAsyncIterable } from "./isAsyncIterable.js";
 import { isIterable } from "./isIterable.js";
-import { isObject } from "./isObject.js";
 
 /**
- * Check if given value is iterable.
+ * Check if given value is `AsynchronousIterable` (either `Iterable` or
+ * `AsyncIterable`).
+ *
+ * **Not to be confused with `isAsyncIterable` which only checks for
+ * `AsyncIterable`.**
  *
  * @category Iterables
  * @example
@@ -14,12 +16,9 @@ import { isObject } from "./isObject.js";
  * isIterable({}); // false
  * ```
  * @param input Value to check.
- * @returns Boolean (`true` when is an iterable, `false` otherwise).
+ * @returns `true` when is an `AsynchronousIterable`, `false` otherwise.
  */
 export const isAsynchronousIterable = <Actual, Item>(
 	input: Actual | AsynchronousIterable<Item>,
 ): input is AsynchronousIterable<Item> =>
-	isIterable(input) ||
-	(isObject(input) &&
-		hasAsyncIteratorSymbol(input) &&
-		isFunction(input[Symbol.asyncIterator]));
+	isIterable(input) || isAsyncIterable(input);
