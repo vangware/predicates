@@ -5,6 +5,7 @@ export { hasIteratorSymbol } from "./hasIteratorSymbol.js";
 export { is } from "./is.js";
 export { isArray } from "./isArray.js";
 export { isAsynchronousIterable } from "./isAsynchronousIterable.js";
+export { isAsyncIterable } from "./isAsyncIterable.js";
 export { isBigInt } from "./isBigInt.js";
 export { isBoolean } from "./isBoolean.js";
 export { isDate } from "./isDate.js";

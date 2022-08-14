@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 1.2.0
+
+-   :arrow_up: dependency upgrade.
+-   :memo: update docs.
+-   :sparkles: add `isAsyncIterator`.
+-   :white_check_mark: add tests for `isAsyncIterator` and `isIterator`.
+
 ## 1.1.3
 
 -   :arrow_up: dependency upgrade.

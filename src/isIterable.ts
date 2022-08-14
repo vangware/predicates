@@ -3,7 +3,7 @@ import { isFunction } from "./isFunction.js";
 import { isObject } from "./isObject.js";
 
 /**
- * Check if given value is iterable.
+ * Check if given value is `Iterable`.
  *
  * @category Iterables
  * @example
@@ -12,7 +12,7 @@ import { isObject } from "./isObject.js";
  * isIterable({}); // false
  * ```
  * @param input Value to check.
- * @returns Boolean (`true` when is an iterable, `false` otherwise).
+ * @returns `true` when is an `Iterable`, `false` otherwise.
  */
 export const isIterable = <Actual, Item>(
 	input: Actual | Iterable<Item>,
