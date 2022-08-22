@@ -48,7 +48,7 @@ export default [
 	{
 		given: "a string",
 		received: () => isAsynchronousIterable("string"),
-		...wantedFalse,
+		...wantedTrue,
 	},
 	{
 		given: "a symbol",
