@@ -1,6 +1,7 @@
 import { hasIteratorSymbol } from "./hasIteratorSymbol.js";
 import { isFunction } from "./isFunction.js";
 import { isObject } from "./isObject.js";
+import { isString } from "./isString.js";
 
 /**
  * Check if given value is `Iterable`.
@@ -17,6 +18,7 @@ import { isObject } from "./isObject.js";
 export const isIterable = <Actual, Item>(
 	input: Actual | Iterable<Item>,
 ): input is Iterable<Item> =>
-	isObject(input) &&
-	hasIteratorSymbol(input) &&
-	isFunction(input[Symbol.iterator]);
+	isString(input) ||
+	(isObject(input) &&
+		hasIteratorSymbol(input) &&
+		isFunction(input[Symbol.iterator]));
