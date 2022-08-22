@@ -5,38 +5,38 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a falsy number",
-		received: isFalsy(0) && isFalsy(NaN),
+		received: () => isFalsy(0) && isFalsy(NaN),
 		...wantedTrue,
 	},
 	{
 		given: "an empty string",
-		received: isFalsy(""),
+		received: () => isFalsy(""),
 		...wantedTrue,
 	},
 	{
 		given: "a false boolean",
-		received: isFalsy(false),
+		received: () => isFalsy(false),
 		...wantedTrue,
 	},
 	{
 		given: "a nullish value",
 		// eslint-disable-next-line no-null/no-null
-		received: isFalsy(null) && isFalsy(undefined),
+		received: () => isFalsy(null) && isFalsy(undefined),
 		...wantedTrue,
 	},
 	{
 		given: "a truthy number",
-		received: isFalsy(1),
+		received: () => isFalsy(1),
 		...wantedFalse,
 	},
 	{
 		given: "a non-empty string",
-		received: isFalsy("string"),
+		received: () => isFalsy("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a true boolean",
-		received: isFalsy(true),
+		received: () => isFalsy(true),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

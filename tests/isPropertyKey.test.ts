@@ -5,7 +5,7 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received:
+		received: () =>
 			isPropertyKey(BigInt(1)) &&
 			isPropertyKey(BigInt("1")) &&
 			isPropertyKey(1n),
@@ -13,32 +13,32 @@ export default [
 	},
 	{
 		given: "a boolean",
-		received: isPropertyKey(true) && isPropertyKey(false),
+		received: () => isPropertyKey(true) && isPropertyKey(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isPropertyKey(new Date()),
+		received: () => isPropertyKey(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isPropertyKey(() => undefined),
+		received: () => isPropertyKey(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isPropertyKey(1),
+		received: () => isPropertyKey(1),
 		...wantedTrue,
 	},
 	{
 		given: "a promise",
-		received: isPropertyKey(Promise.resolve()),
+		received: () => isPropertyKey(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			isPropertyKey(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
 			isPropertyKey(new RegExp("expression", "u")),
@@ -46,34 +46,34 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isPropertyKey("string"),
+		received: () => isPropertyKey("string"),
 		...wantedTrue,
 	},
 	{
 		given: "a symbol",
-		received:
+		received: () =>
 			isPropertyKey(Symbol("description")) && isPropertyKey(Symbol(1)),
 		...wantedTrue,
 	},
 	{
 		given: "an array",
-		received: isPropertyKey([]),
+		received: () => isPropertyKey([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object",
-		received: isPropertyKey({}),
+		received: () => isPropertyKey({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isPropertyKey(null),
+		received: () => isPropertyKey(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isPropertyKey(undefined),
+		received: () => isPropertyKey(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

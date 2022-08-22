@@ -13,27 +13,27 @@ export default [
 	},
 	{
 		given: "a boolean",
-		received: isAsyncIterable(true) && isAsyncIterable(false),
+		received: () => isAsyncIterable(true) && isAsyncIterable(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isAsyncIterable(new Date()),
+		received: () => isAsyncIterable(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isAsyncIterable(() => undefined),
+		received: () => isAsyncIterable(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isAsyncIterable(1),
+		received: () => isAsyncIterable(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: isAsyncIterable(Promise.resolve()),
+		received: () => isAsyncIterable(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
@@ -46,7 +46,7 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isAsyncIterable("string"),
+		received: () => isAsyncIterable("string"),
 		...wantedFalse,
 	},
 	{
@@ -58,35 +58,36 @@ export default [
 	},
 	{
 		given: "an array",
-		received: isAsyncIterable([]),
+		received: () => isAsyncIterable([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object with a Symbol.iterator property",
-		received: isAsyncIterable({ [Symbol.iterator]: () => void 0 }),
+		received: () => isAsyncIterable({ [Symbol.iterator]: () => void 0 }),
 		...wantedFalse,
 	},
 	{
 		given: "an object with a Symbol.asyncIterator property",
-		received: isAsyncIterable({
-			[Symbol.asyncIterator]: () => void 0,
-		}),
+		received: () =>
+			isAsyncIterable({
+				[Symbol.asyncIterator]: () => void 0,
+			}),
 		...wantedTrue,
 	},
 	{
 		given: "an object",
-		received: isAsyncIterable({}),
+		received: () => isAsyncIterable({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isAsyncIterable(null),
+		received: () => isAsyncIterable(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isAsyncIterable(undefined),
+		received: () => isAsyncIterable(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

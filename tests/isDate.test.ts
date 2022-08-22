@@ -5,32 +5,32 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received: isDate(BigInt(1)) && isDate(BigInt("1")) && isDate(1n),
+		received: () => isDate(BigInt(1)) && isDate(BigInt("1")) && isDate(1n),
 		...wantedFalse,
 	},
 	{
 		given: "a boolean",
-		received: isDate(true) && isDate(false),
+		received: () => isDate(true) && isDate(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isDate(new Date()),
+		received: () => isDate(new Date()),
 		...wantedTrue,
 	},
 	{
 		given: "a function",
-		received: isDate(() => undefined),
+		received: () => isDate(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isDate(1),
+		received: () => isDate(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: isDate(Promise.resolve()),
+		received: () => isDate(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
@@ -42,33 +42,33 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isDate("string"),
+		received: () => isDate("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a symbol",
-		received: isDate(Symbol("description")) && isDate(Symbol(1)),
+		received: () => isDate(Symbol("description")) && isDate(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: isDate([]),
+		received: () => isDate([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object",
-		received: isDate({}),
+		received: () => isDate({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isDate(null),
+		received: () => isDate(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isDate(undefined),
+		received: () => isDate(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

@@ -5,37 +5,37 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received: isUndefined(BigInt(1)) && isUndefined(BigInt("1")),
+		received: () => isUndefined(BigInt(1)) && isUndefined(BigInt("1")),
 		...wantedFalse,
 	},
 	{
 		given: "a boolean",
-		received: isUndefined(true) && isUndefined(false),
+		received: () => isUndefined(true) && isUndefined(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isUndefined(new Date()),
+		received: () => isUndefined(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isUndefined(() => undefined),
+		received: () => isUndefined(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isUndefined(1),
+		received: () => isUndefined(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: isUndefined(Promise.resolve()),
+		received: () => isUndefined(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			isUndefined(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
 			isUndefined(new RegExp("expression", "u")),
@@ -43,33 +43,34 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isUndefined("string"),
+		received: () => isUndefined("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a symbol",
-		received: isUndefined(Symbol("description")) && isUndefined(Symbol(1)),
+		received: () =>
+			isUndefined(Symbol("description")) && isUndefined(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: isUndefined([]),
+		received: () => isUndefined([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object",
-		received: isUndefined({}),
+		received: () => isUndefined({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isUndefined(null),
+		received: () => isUndefined(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isUndefined(undefined),
+		received: () => isUndefined(undefined),
 		...wantedTrue,
 	},
 ] as Tests<boolean>;
