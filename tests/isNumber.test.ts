@@ -5,32 +5,33 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received: isNumber(BigInt(1)) && isNumber(BigInt("1")) && isNumber(1n),
+		received: () =>
+			isNumber(BigInt(1)) && isNumber(BigInt("1")) && isNumber(1n),
 		...wantedFalse,
 	},
 	{
 		given: "a boolean",
-		received: isNumber(true) && isNumber(false),
+		received: () => isNumber(true) && isNumber(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isNumber(new Date()),
+		received: () => isNumber(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isNumber(() => undefined),
+		received: () => isNumber(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isNumber(1),
+		received: () => isNumber(1),
 		...wantedTrue,
 	},
 	{
 		given: "a promise",
-		received: isNumber(Promise.resolve()),
+		received: () => isNumber(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
@@ -42,33 +43,33 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isNumber("string"),
+		received: () => isNumber("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a symbol",
-		received: isNumber(Symbol("description")) && isNumber(Symbol(1)),
+		received: () => isNumber(Symbol("description")) && isNumber(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: isNumber([]),
+		received: () => isNumber([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object",
-		received: isNumber({}),
+		received: () => isNumber({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isNumber(null),
+		received: () => isNumber(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isNumber(undefined),
+		received: () => isNumber(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

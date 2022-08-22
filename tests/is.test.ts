@@ -9,22 +9,22 @@ const otherValue = "bar";
 export default [
 	{
 		given: "two equal values",
-		received: is(value)(valueCopy),
+		received: () => is(value)(valueCopy),
 		...wantedTrue,
 	},
 	{
 		given: "two different dates",
-		received: is(value)(otherValue),
+		received: () => is(value)(otherValue),
 		...wantedFalse,
 	},
 	{
 		given: "two equal objects",
-		received: is({})({}),
+		received: () => is({})({}),
 		...wantedFalse,
 	},
 	{
 		given: "two equal arrays",
-		received: is([])([]),
+		received: () => is([])([]),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

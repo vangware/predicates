@@ -8,22 +8,22 @@ const matchNumbersRegExp = match(/\d+/u);
 export default [
 	{
 		given: "match based on string and a number",
-		received: matchNumbersString("123"),
+		received: () => matchNumbersString("123"),
 		...wantedTrue,
 	},
 	{
 		given: "match based on string and a string with no numbers",
-		received: matchNumbersString("foo"),
+		received: () => matchNumbersString("foo"),
 		...wantedFalse,
 	},
 	{
 		given: "match based on a regular expression and a number",
-		received: matchNumbersRegExp("123"),
+		received: () => matchNumbersRegExp("123"),
 		...wantedTrue,
 	},
 	{
 		given: "match based on a regular expression and a string with no numbers",
-		received: matchNumbersRegExp("foo"),
+		received: () => matchNumbersRegExp("foo"),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

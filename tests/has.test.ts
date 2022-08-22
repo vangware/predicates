@@ -17,62 +17,62 @@ const emptyArray = [] as const;
 export default [
 	{
 		given: "an object with string key when looking for a string key",
-		received: has(string)(objectWithString),
+		received: () => has(string)(objectWithString),
 		...wantedTrue,
 	},
 	{
 		given: "an object with symbol key when looking for a symbol key",
-		received: has(symbol)(objectWithSymbol),
+		received: () => has(symbol)(objectWithSymbol),
 		...wantedTrue,
 	},
 	{
 		given: "an object with number key when looking for a number key",
-		received: has(number)(objectWithNumber),
+		received: () => has(number)(objectWithNumber),
 		...wantedTrue,
 	},
 	{
 		given: "an array with number key when looking for a number key",
-		received: has(number)(arrayWith2Items),
+		received: () => has(number)(arrayWith2Items),
 		...wantedTrue,
 	},
 	{
 		given: "an array without number key when looking for a number key",
-		received: has(number)(arrayWith1Item),
+		received: () => has(number)(arrayWith1Item),
 		...wantedFalse,
 	},
 	{
 		given: "an empty array looking for a number key",
-		received: has(number)(emptyArray),
+		received: () => has(number)(emptyArray),
 		...wantedFalse,
 	},
 	{
 		given: "an empty object when looking for a string key",
-		received: has(string)(emptyObject),
+		received: () => has(string)(emptyObject),
 		...wantedFalse,
 	},
 	{
 		given: "an empty object when looking for a symbol key",
-		received: has(symbol)(emptyObject),
+		received: () => has(symbol)(emptyObject),
 		...wantedFalse,
 	},
 	{
 		given: "an empty object when looking for a number key",
-		received: has(number)(emptyObject),
+		received: () => has(number)(emptyObject),
 		...wantedFalse,
 	},
 	{
 		given: "an object with symbol key when looking for a string key",
-		received: has(string)(objectWithSymbol),
+		received: () => has(string)(objectWithSymbol),
 		...wantedFalse,
 	},
 	{
 		given: "an object with number key when looking for a symbol key",
-		received: has(symbol)(objectWithNumber),
+		received: () => has(symbol)(objectWithNumber),
 		...wantedFalse,
 	},
 	{
 		given: "an object with string key when looking for a number key",
-		received: has(number)(objectWithString),
+		received: () => has(number)(objectWithString),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;
