@@ -45,7 +45,7 @@ export default [
 	{
 		given: "a string",
 		received: () => isIterable("string"),
-		...wantedFalse,
+		...wantedTrue,
 	},
 	{
 		given: "a symbol",
