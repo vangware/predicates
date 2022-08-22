@@ -7,17 +7,17 @@ const isPrototypeOfObject = isPrototypeOf(Object);
 export default [
 	{
 		given: "an empty object",
-		received: isPrototypeOfObject({}),
+		received: () => isPrototypeOfObject({}),
 		...wantedTrue,
 	},
 	{
 		given: "an array",
-		received: isPrototypeOfObject([]),
+		received: () => isPrototypeOfObject([]),
 		...wantedFalse,
 	},
 	{
 		given: "a regular expression",
-		received: isPrototypeOfObject(/-/u),
+		received: () => isPrototypeOfObject(/-/u),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

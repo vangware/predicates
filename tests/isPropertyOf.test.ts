@@ -19,37 +19,37 @@ const missingNumber = 2;
 export default [
 	{
 		given: "a symbol that exist in the given object",
-		received: isPropertyOfObject(symbol),
+		received: () => isPropertyOfObject(symbol),
 		...wantedTrue,
 	},
 	{
 		given: "a string that exist in the given object",
-		received: isPropertyOfObject(string),
+		received: () => isPropertyOfObject(string),
 		...wantedTrue,
 	},
 	{
 		given: "a number that exist in the given object",
-		received: isPropertyOfObject(number),
+		received: () => isPropertyOfObject(number),
 		...wantedTrue,
 	},
 	{
 		given: "a symbol that doesn't exist in the given object",
-		received: isPropertyOfObject(missingSymbol),
+		received: () => isPropertyOfObject(missingSymbol),
 		...wantedFalse,
 	},
 	{
 		given: "a string that doesn't exist in the given object",
-		received: isPropertyOfObject(missingString),
+		received: () => isPropertyOfObject(missingString),
 		...wantedFalse,
 	},
 	{
 		given: "a number that doesn't exist in the given object",
-		received: isPropertyOfObject(missingNumber),
+		received: () => isPropertyOfObject(missingNumber),
 		...wantedFalse,
 	},
 	{
 		given: "a string property on an empty object",
-		received: isPropertyOf({} as ReadOnlyRecord)(string),
+		received: () => isPropertyOf({} as ReadOnlyRecord)(string),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

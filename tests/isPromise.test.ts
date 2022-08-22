@@ -5,38 +5,38 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received:
+		received: () =>
 			isPromise(BigInt(1)) && isPromise(BigInt("1")) && isPromise(1n),
 		...wantedFalse,
 	},
 	{
 		given: "a boolean",
-		received: isPromise(true) && isPromise(false),
+		received: () => isPromise(true) && isPromise(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isPromise(new Date()),
+		received: () => isPromise(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isPromise(() => undefined),
+		received: () => isPromise(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isPromise(1),
+		received: () => isPromise(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: isPromise(Promise.resolve()),
+		received: () => isPromise(Promise.resolve()),
 		...wantedTrue,
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			isPromise(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
 			isPromise(new RegExp("expression", "u")),
@@ -44,33 +44,34 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isPromise("string"),
+		received: () => isPromise("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a symbol",
-		received: isPromise(Symbol("description")) && isPromise(Symbol(1)),
+		received: () =>
+			isPromise(Symbol("description")) && isPromise(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: isPromise([]),
+		received: () => isPromise([]),
 		...wantedFalse,
 	},
 	{
 		given: "an object",
-		received: isPromise({}),
+		received: () => isPromise({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isPromise(null),
+		received: () => isPromise(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isPromise(undefined),
+		received: () => isPromise(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

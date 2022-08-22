@@ -5,22 +5,22 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a safe interger",
-		received: isSafeInteger(1),
+		received: () => isSafeInteger(1),
 		...wantedTrue,
 	},
 	{
 		given: "a float",
-		received: isSafeInteger(1.5),
+		received: () => isSafeInteger(1.5),
 		...wantedFalse,
 	},
 	{
 		given: "a negative integer",
-		received: isSafeInteger(-1),
+		received: () => isSafeInteger(-1),
 		...wantedTrue,
 	},
 	{
 		given: "a negative float",
-		received: isSafeInteger(-1.5),
+		received: () => isSafeInteger(-1.5),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

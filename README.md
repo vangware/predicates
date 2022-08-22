@@ -56,7 +56,7 @@ isBoolean(undefined); // false
 
 Documentation can be found [HERE][documentation]. It is auto-generated with
 [typedoc][typedoc] based on the JSDocs and the types in the source. Shouldn't be
-necessary to read this, code editors like [VSCode][vscode] integrate the
+necessary to read this, code editors like [VS Code][vscode] integrate the
 documentation in the UI.
 
 ## Changelog

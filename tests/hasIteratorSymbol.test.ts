@@ -9,17 +9,17 @@ const array = [] as ReadonlyArray<unknown>;
 export default [
 	{
 		given: "an object with an  iterator symbol",
-		received: hasIteratorSymbol(objectWithIteratorSymbol),
+		received: () => hasIteratorSymbol(objectWithIteratorSymbol),
 		...wantedTrue,
 	},
 	{
 		given: "an object without an  iterator symbol",
-		received: hasIteratorSymbol(objectWithoutIteratorSymbol),
+		received: () => hasIteratorSymbol(objectWithoutIteratorSymbol),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: hasIteratorSymbol(array),
+		received: () => hasIteratorSymbol(array),
 		...wantedTrue,
 	},
 ] as Tests<boolean>;

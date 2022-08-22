@@ -5,7 +5,7 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received:
+		received: () =>
 			isAsynchronousIterable(BigInt(1)) &&
 			isAsynchronousIterable(BigInt("1")) &&
 			isAsynchronousIterable(1n),
@@ -13,32 +13,33 @@ export default [
 	},
 	{
 		given: "a boolean",
-		received: isAsynchronousIterable(true) && isAsynchronousIterable(false),
+		received: () =>
+			isAsynchronousIterable(true) && isAsynchronousIterable(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: isAsynchronousIterable(new Date()),
+		received: () => isAsynchronousIterable(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: isAsynchronousIterable(() => undefined),
+		received: () => isAsynchronousIterable(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: isAsynchronousIterable(1),
+		received: () => isAsynchronousIterable(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: isAsynchronousIterable(Promise.resolve()),
+		received: () => isAsynchronousIterable(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			isAsynchronousIterable(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
 			isAsynchronousIterable(new RegExp("expression", "u")),
@@ -46,47 +47,49 @@ export default [
 	},
 	{
 		given: "a string",
-		received: isAsynchronousIterable("string"),
+		received: () => isAsynchronousIterable("string"),
 		...wantedFalse,
 	},
 	{
 		given: "a symbol",
-		received:
+		received: () =>
 			isAsynchronousIterable(Symbol("description")) &&
 			isAsynchronousIterable(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: isAsynchronousIterable([]),
+		received: () => isAsynchronousIterable([]),
 		...wantedTrue,
 	},
 	{
 		given: "an object with a Symbol.iterator property",
-		received: isAsynchronousIterable({ [Symbol.iterator]: () => void 0 }),
+		received: () =>
+			isAsynchronousIterable({ [Symbol.iterator]: () => void 0 }),
 		...wantedTrue,
 	},
 	{
 		given: "an object with a Symbol.asyncIterator property",
-		received: isAsynchronousIterable({
-			[Symbol.asyncIterator]: () => void 0,
-		}),
+		received: () =>
+			isAsynchronousIterable({
+				[Symbol.asyncIterator]: () => void 0,
+			}),
 		...wantedTrue,
 	},
 	{
 		given: "an object",
-		received: isAsynchronousIterable({}),
+		received: () => isAsynchronousIterable({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: isAsynchronousIterable(null),
+		received: () => isAsynchronousIterable(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: isAsynchronousIterable(undefined),
+		received: () => isAsynchronousIterable(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

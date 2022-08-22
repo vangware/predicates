@@ -9,17 +9,18 @@ const array = [] as ReadonlyArray<unknown>;
 export default [
 	{
 		given: "an object with an async iterator symbol",
-		received: hasAsyncIteratorSymbol(objectWithAsyncIteratorSymbol),
+		received: () => hasAsyncIteratorSymbol(objectWithAsyncIteratorSymbol),
 		...wantedTrue,
 	},
 	{
 		given: "an object without an async iterator symbol",
-		received: hasAsyncIteratorSymbol(objectWithoutAsyncIteratorSymbol),
+		received: () =>
+			hasAsyncIteratorSymbol(objectWithoutAsyncIteratorSymbol),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: hasAsyncIteratorSymbol(array),
+		received: () => hasAsyncIteratorSymbol(array),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;
