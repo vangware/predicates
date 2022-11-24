@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/predicates",
 	"description": "🧐 Predicate util functions",
-	"version": "1.2.14",
+	"version": "1.2.15",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
