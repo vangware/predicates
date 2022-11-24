@@ -22,7 +22,7 @@
 <div class="tsd-comment tsd-typography"><p>Takes a <code>type</code> string and checks if given <code>input</code> is of that <code>typeof</code>. This
 &quot;patches&quot; typeof so <code>null</code> is not <code>&quot;object&quot;</code> but <code>&quot;null&quot;</code> instead (rejected
 proposal for lack of backwards compatibility, more details
-<a href="http://lshi.ru/null-typeof">here</a>).</p>
+<a href="http://lukeshiru.dev/null-typeof">here</a>).</p>
 
 <h3>Example</h3><pre><code class="language-typescript"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-12">isString</span><span class="hl-1"> = </span><span class="hl-4">isType</span><span class="hl-1">(</span><span class="hl-3">&quot;string&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-4">isString</span><span class="hl-1">(</span><span class="hl-3">&quot;value&quot;</span><span class="hl-1">); </span><span class="hl-6">// true</span><br/><span class="hl-4">isString</span><span class="hl-1">(</span><span class="hl-13">1</span><span class="hl-1">); </span><span class="hl-6">// false</span>
 </code></pre>
