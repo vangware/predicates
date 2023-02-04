@@ -1,4 +1,4 @@
-import type { RegularExpression } from "@vangware/types";
+import type { ReadOnlyDeep, RegularExpression } from "@vangware/types";
 import { isString } from "./isString.js";
 
 /**
@@ -15,7 +15,9 @@ import { isString } from "./isString.js";
  * @param regularExpression Instance of `RegExp` or a string.
  * @returns `true` if the string matches the regular expression, `false` otherwise.
  */
-export const match = (regularExpression: RegExp | RegularExpression) => {
+export const match = (
+	regularExpression: ReadOnlyDeep<RegExp> | RegularExpression,
+) => {
 	const { flags, source } = isString(regularExpression)
 		? {
 				...(/\/(?<source>.+)\/(?<flags>[gimsu])+$/u.exec(
