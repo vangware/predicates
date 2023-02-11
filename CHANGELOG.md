@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 1.2.21
+
+-   ⬆️ dependency upgrade.
+-   🔥 remove `.editorconfig`.
+-   🔧 update configs with new `@vangware/configs`.
+
 ## 1.2.20
 
 -   ⬆️ dependency upgrade.
