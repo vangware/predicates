@@ -19,8 +19,6 @@ import type { TypeOfDictionary, TypeOfValue } from "@vangware/types";
  */
 export const isType =
 	<Type extends TypeOfValue>(type: Type) =>
-	<Actual>(
-		input: Actual | TypeOfDictionary[Type],
-	): input is TypeOfDictionary[Type] =>
+	(input: unknown): input is TypeOfDictionary[Type] =>
 		// eslint-disable-next-line no-null/no-null
 		(input === null ? "null" : typeof input) === type;

@@ -17,8 +17,7 @@ import type { Falsy } from "@vangware/types";
  * @param input Value to check.
  * @returns Returns `true` if falsy, `false` otherwise.
  */
-export const isFalsy = <Actual = unknown>(
-	// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-	input: Actual | Falsy,
+export const isFalsy = (
+	input: unknown,
 	// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 ): input is Falsy => !input;

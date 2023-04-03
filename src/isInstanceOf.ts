@@ -15,7 +15,5 @@ import type { Class } from "@vangware/types";
  */
 export const isInstanceOf =
 	<Expected extends Class<never>>(constructor: Expected) =>
-	<Actual = unknown>(
-		input: Actual | InstanceType<Expected>,
-	): input is InstanceType<Expected> =>
+	(input: unknown): input is InstanceType<Expected> =>
 		input instanceof constructor;

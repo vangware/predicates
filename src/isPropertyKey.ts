@@ -16,7 +16,5 @@ import { isSymbol } from "./isSymbol.js";
  * @param input Value to check.
  * @returns `true` if the given value is a valid PropertyKey of an object, `false` otherwise.
  */
-export const isPropertyKey = <Actual>(
-	input: Actual | PropertyKey,
-): input is PropertyKey =>
+export const isPropertyKey = (input: unknown): input is PropertyKey =>
 	isNumber(input) || isString(input) || isSymbol(input);

@@ -15,6 +15,6 @@ import { isFalsy } from "./isFalsy.js";
  * @param input Value to check.
  * @returns Returns `true` if truthy, `false` otherwise.
  */
-export const isTruthy = <Actual = unknown>(
-	input: ReadOnly<Actual>,
-): input is Truthy<ReadOnly<Actual>> => !isFalsy(input);
+export const isTruthy = <Input>(
+	input: Input | Truthy<ReadOnly<Input>>,
+): input is Truthy<ReadOnly<Input>> => !isFalsy(input);

@@ -1,3 +1,4 @@
+import type { ReadOnly } from "@vangware/types";
 import { hasIteratorSymbol } from "./hasIteratorSymbol.js";
 import { isFunction } from "./isFunction.js";
 import { isObject } from "./isObject.js";
@@ -15,9 +16,9 @@ import { isString } from "./isString.js";
  * @param input Value to check.
  * @returns `true` when is an `Iterable`, `false` otherwise.
  */
-export const isIterable = <Actual, Item>(
-	input: Actual | Iterable<Item>,
-): input is Iterable<Item> =>
+export const isIterable = <Item>(
+	input: unknown,
+): input is ReadOnly<Iterable<Item>> =>
 	isString(input) ||
 	(isObject(input) &&
 		hasIteratorSymbol(input) &&
