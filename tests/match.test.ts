@@ -4,6 +4,7 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 
 const matchNumbersString = match("/\\d+/u");
 const matchNumbersRegExp = match(/\d+/u);
+const matchWithErrors = match("/('/u");
 
 export default [
 	{
@@ -24,6 +25,11 @@ export default [
 	{
 		given: "match based on a regular expression and a string with no numbers",
 		received: () => matchNumbersRegExp("foo"),
+		...wantedFalse,
+	},
+	{
+		given: "match with syntax errors",
+		received: () => matchWithErrors("foo"),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

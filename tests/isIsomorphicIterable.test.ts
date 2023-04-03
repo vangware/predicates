@@ -1,95 +1,95 @@
 import type { Tests } from "@vangware/test";
-import { isAsynchronousIterable } from "../src/isAsynchronousIterable.js";
+import { isIsomorphicIterable } from "../src/isIsomorphicIterable.js";
 import { wantedFalse, wantedTrue } from "./wanted.js";
 
 export default [
 	{
 		given: "a BigInt",
 		received: () =>
-			isAsynchronousIterable(BigInt(1)) &&
-			isAsynchronousIterable(BigInt("1")) &&
-			isAsynchronousIterable(1n),
+			isIsomorphicIterable(BigInt(1)) &&
+			isIsomorphicIterable(BigInt("1")) &&
+			isIsomorphicIterable(1n),
 		...wantedFalse,
 	},
 	{
 		given: "a boolean",
 		received: () =>
-			isAsynchronousIterable(true) && isAsynchronousIterable(false),
+			isIsomorphicIterable(true) && isIsomorphicIterable(false),
 		...wantedFalse,
 	},
 	{
 		given: "a date",
-		received: () => isAsynchronousIterable(new Date()),
+		received: () => isIsomorphicIterable(new Date()),
 		...wantedFalse,
 	},
 	{
 		given: "a function",
-		received: () => isAsynchronousIterable(() => undefined),
+		received: () => isIsomorphicIterable(() => undefined),
 		...wantedFalse,
 	},
 	{
 		given: "a number",
-		received: () => isAsynchronousIterable(1),
+		received: () => isIsomorphicIterable(1),
 		...wantedFalse,
 	},
 	{
 		given: "a promise",
-		received: () => isAsynchronousIterable(Promise.resolve()),
+		received: () => isIsomorphicIterable(Promise.resolve()),
 		...wantedFalse,
 	},
 	{
 		given: "a regular expression",
 		received: () =>
-			isAsynchronousIterable(/expression/u) &&
+			isIsomorphicIterable(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
-			isAsynchronousIterable(new RegExp("expression", "u")),
+			isIsomorphicIterable(new RegExp("expression", "u")),
 		...wantedFalse,
 	},
 	{
 		given: "a string",
-		received: () => isAsynchronousIterable("string"),
+		received: () => isIsomorphicIterable("string"),
 		...wantedTrue,
 	},
 	{
 		given: "a symbol",
 		received: () =>
-			isAsynchronousIterable(Symbol("description")) &&
-			isAsynchronousIterable(Symbol(1)),
+			isIsomorphicIterable(Symbol("description")) &&
+			isIsomorphicIterable(Symbol(1)),
 		...wantedFalse,
 	},
 	{
 		given: "an array",
-		received: () => isAsynchronousIterable([]),
+		received: () => isIsomorphicIterable([]),
 		...wantedTrue,
 	},
 	{
 		given: "an object with a Symbol.iterator property",
 		received: () =>
-			isAsynchronousIterable({ [Symbol.iterator]: () => void 0 }),
+			isIsomorphicIterable({ [Symbol.iterator]: () => void 0 }),
 		...wantedTrue,
 	},
 	{
 		given: "an object with a Symbol.asyncIterator property",
 		received: () =>
-			isAsynchronousIterable({
+			isIsomorphicIterable({
 				[Symbol.asyncIterator]: () => void 0,
 			}),
 		...wantedTrue,
 	},
 	{
 		given: "an object",
-		received: () => isAsynchronousIterable({}),
+		received: () => isIsomorphicIterable({}),
 		...wantedFalse,
 	},
 	{
 		given: "null",
 		// eslint-disable-next-line no-null/no-null
-		received: () => isAsynchronousIterable(null),
+		received: () => isIsomorphicIterable(null),
 		...wantedFalse,
 	},
 	{
 		given: "undefined",
-		received: () => isAsynchronousIterable(undefined),
+		received: () => isIsomorphicIterable(undefined),
 		...wantedFalse,
 	},
 ] as Tests<boolean>;

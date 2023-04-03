@@ -1,4 +1,4 @@
-import type { GenericConstructor } from "@vangware/types";
+import type { Class } from "@vangware/types";
 
 /**
  * Takes a `constructor` and checks if given `input` is an instance of it.
@@ -14,7 +14,7 @@ import type { GenericConstructor } from "@vangware/types";
  * @returns Returns a curried function with `constructor` in context.
  */
 export const isInstanceOf =
-	<Expected extends GenericConstructor>(constructor: Expected) =>
+	<Expected extends Class<never>>(constructor: Expected) =>
 	<Actual = unknown>(
 		input: Actual | InstanceType<Expected>,
 	): input is InstanceType<Expected> =>

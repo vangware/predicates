@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 2.0.0
+
+-   ⬆️ dependency upgrade.
+-   🚚 rename `isAsynchronousIterable` to `isIsomorphicIterable`.
+-   🏗 change `match` to be safer (uses `@vangware/parsers`' `attempt`).
+
 ## 1.2.24
 
 -   ⬆️ dependency upgrade.

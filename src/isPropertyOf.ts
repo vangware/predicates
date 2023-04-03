@@ -15,8 +15,8 @@ import type { ReadOnlyRecord } from "@vangware/types";
  * @returns Curried function with `context` set.
  */
 export const isPropertyOf =
-	<Key extends PropertyKey>(object: ReadOnlyRecord<unknown, Key>) =>
+	<Key extends PropertyKey>(object: ReadOnlyRecord<Key>) =>
 	(key: Key) =>
-		// TODO: Change with `Object.hasOwn(object, key);` once is supported:
+		// TODO: Change with `Object.hasOwn(object, key);` once is supported by TypeScript
 		// eslint-disable-next-line, functional/no-conditional-statement
 		Object.prototype.hasOwnProperty.call(object, key);
