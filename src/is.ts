@@ -14,5 +14,5 @@
  */
 export const is =
 	<Expected>(expected: Expected) =>
-	<Actual>(actual: Actual | Expected): actual is Expected =>
+	(actual: unknown): actual is Expected =>
 		Object.is(expected, actual);

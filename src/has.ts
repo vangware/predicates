@@ -1,3 +1,5 @@
+import { isObject } from "./isObject.js";
+
 /**
  * Curried wrapper for the `in` operator. Given a `property` name and an
  * `object`, returns `true` the object contains that property, `false`
@@ -15,8 +17,5 @@
  */
 export const has =
 	<Property extends PropertyKey>(property: Property) =>
-	<Actual extends object>(
-		// Using `Readonly<Record<...>>` instead of `ReadOnlyRecord` because of TS limitations.
-		object: Actual | Readonly<Record<Property, unknown>>,
-	): object is Readonly<Record<Property, unknown>> =>
-		property in object;
+	(object: unknown): object is Readonly<Record<Property, unknown>> =>
+		isObject(object) && property in object;

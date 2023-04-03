@@ -1,3 +1,4 @@
+import type { ReadOnly } from "@vangware/types";
 import { hasAsyncIteratorSymbol } from "./hasAsyncIteratorSymbol.js";
 import { isFunction } from "./isFunction.js";
 import { isObject } from "./isObject.js";
@@ -18,9 +19,9 @@ import { isObject } from "./isObject.js";
  * @param input Value to check.
  * @returns `true` when is an `AsyncIterable`, `false` otherwise.
  */
-export const isAsyncIterable = <Actual, Item>(
-	input: Actual | AsyncIterable<Item>,
-): input is AsyncIterable<Item> =>
+export const isAsyncIterable = <Item>(
+	input: unknown,
+): input is ReadOnly<AsyncIterable<Item>> =>
 	isObject(input) &&
 	hasAsyncIteratorSymbol(input) &&
 	isFunction(input[Symbol.asyncIterator]);

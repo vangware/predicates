@@ -18,7 +18,7 @@ import { isIterable } from "./isIterable.js";
  * @param input Value to check.
  * @returns `true` when is an `IsomorphicIterable`, `false` otherwise.
  */
-export const isIsomorphicIterable = <Actual, Item>(
-	input: Actual | IsomorphicIterable<Item>,
+export const isIsomorphicIterable = <Item>(
+	input: unknown,
 ): input is IsomorphicIterable<Item> =>
 	isIterable(input) || isAsyncIterable(input);

@@ -1,8 +1,4 @@
-import type {
-	IsomorphicIterable,
-	ReadOnly,
-	ReadOnlyArray,
-} from "@vangware/types";
+import type { ReadOnlyArray } from "@vangware/types";
 
 /**
  * Check if given `input` is an instance of `Array`.
@@ -15,6 +11,6 @@ import type {
  * ```
  * @returns `true` if the given value is an array, `false` otherwise.
  */
-export const isArray = Array.isArray as <Item, Actual>(
-	input: Actual | IsomorphicIterable<ReadOnly<Item>>,
+export const isArray = Array.isArray as <Item>(
+	input: unknown,
 ) => input is ReadOnlyArray<Item>;
