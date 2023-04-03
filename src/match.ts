@@ -1,4 +1,5 @@
-import type { ReadOnlyDeep, RegularExpression } from "@vangware/types";
+import { attempt } from "@vangware/parsers";
+import type { ReadOnly, RegularExpression } from "@vangware/types";
 import { isString } from "./isString.js";
 
 /**
@@ -16,7 +17,7 @@ import { isString } from "./isString.js";
  * @returns `true` if the string matches the regular expression, `false` otherwise.
  */
 export const match = (
-	regularExpression: ReadOnlyDeep<RegExp> | RegularExpression,
+	regularExpression: ReadOnly<RegExp> | RegularExpression,
 ) => {
 	const { flags, source } = isString(regularExpression)
 		? {
@@ -25,6 +26,9 @@ export const match = (
 				)?.groups as Pick<RegExp, "flags" | "source">),
 		  }
 		: regularExpression;
+	const attemptTest = attempt((text: string) =>
+		new RegExp(source, flags).test(text),
+	);
 
-	return (text: string) => new RegExp(source, flags).test(text);
+	return (text: string) => attemptTest(text) ?? false;
 };
