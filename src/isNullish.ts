@@ -14,7 +14,7 @@ import { isNull } from "./isNull.js";
  * ```
  * @returns `true` if nullish, `false` otherwise.
  */
-export const isNullish = <Actual>(
+export const isNullish = (
 	// eslint-disable-next-line no-null/no-null
-	input: Actual | Nullish = null,
+	input: unknown = null,
 ): input is Nullish => isNull(input);
