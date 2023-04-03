@@ -1,5 +1,3 @@
-import type { ReadOnlyRecord } from "@vangware/types";
-
 /**
  * Curried wrapper for the `in` operator. Given a `property` name and an
  * `object`, returns `true` the object contains that property, `false`
@@ -17,8 +15,8 @@ import type { ReadOnlyRecord } from "@vangware/types";
  */
 export const has =
 	<Property extends PropertyKey>(property: Property) =>
-	// eslint-disable-next-line @typescript-eslint/ban-types
 	<Actual extends object>(
-		object: Actual | ReadOnlyRecord<unknown, Property>,
-	): object is ReadOnlyRecord<unknown, Property> =>
+		// Using `Readonly<Record<...>>` instead of `ReadOnlyRecord` because of TS limitations.
+		object: Actual | Readonly<Record<Property, unknown>>,
+	): object is Readonly<Record<Property, unknown>> =>
 		property in object;

@@ -1,10 +1,10 @@
-import type { TypeOfMap, TypeOfValue } from "@vangware/types";
+import type { TypeOfDictionary, TypeOfValue } from "@vangware/types";
 
 /**
  * Takes a `type` string and checks if given `input` is of that `typeof`. This
  * "patches" typeof so `null` is not `"object"` but `"null"` instead (rejected
  * proposal for lack of backwards compatibility, more details
- * [here](http://lukeshiru.dev/null-typeof)).
+ * [here](http://luke.sh/null-typeof)).
  *
  * @category Predicates
  * @example
@@ -19,6 +19,8 @@ import type { TypeOfMap, TypeOfValue } from "@vangware/types";
  */
 export const isType =
 	<Type extends TypeOfValue>(type: Type) =>
-	<Actual>(input: Actual | TypeOfMap[Type]): input is TypeOfMap[Type] =>
+	<Actual>(
+		input: Actual | TypeOfDictionary[Type],
+	): input is TypeOfDictionary[Type] =>
 		// eslint-disable-next-line no-null/no-null
 		(input === null ? "null" : typeof input) === type;

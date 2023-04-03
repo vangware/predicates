@@ -1,9 +1,9 @@
-import type { AsynchronousIterable } from "@vangware/types";
+import type { IsomorphicIterable } from "@vangware/types";
 import { isAsyncIterable } from "./isAsyncIterable.js";
 import { isIterable } from "./isIterable.js";
 
 /**
- * Check if given value is `AsynchronousIterable` (either `Iterable` or
+ * Check if given value is `IsomorphicIterable` (either `Iterable` or
  * `AsyncIterable`).
  *
  * **Not to be confused with `isAsyncIterable` which only checks for
@@ -16,9 +16,9 @@ import { isIterable } from "./isIterable.js";
  * isIterable({}); // false
  * ```
  * @param input Value to check.
- * @returns `true` when is an `AsynchronousIterable`, `false` otherwise.
+ * @returns `true` when is an `IsomorphicIterable`, `false` otherwise.
  */
-export const isAsynchronousIterable = <Actual, Item>(
-	input: Actual | AsynchronousIterable<Item>,
-): input is AsynchronousIterable<Item> =>
+export const isIsomorphicIterable = <Actual, Item>(
+	input: Actual | IsomorphicIterable<Item>,
+): input is IsomorphicIterable<Item> =>
 	isIterable(input) || isAsyncIterable(input);

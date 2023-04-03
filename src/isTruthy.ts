@@ -1,4 +1,4 @@
-import type { Truthy } from "@vangware/types";
+import type { ReadOnly, Truthy } from "@vangware/types";
 import { isFalsy } from "./isFalsy.js";
 
 /**
@@ -16,5 +16,5 @@ import { isFalsy } from "./isFalsy.js";
  * @returns Returns `true` if truthy, `false` otherwise.
  */
 export const isTruthy = <Actual = unknown>(
-	input: Actual,
-): input is Truthy<Actual> => !isFalsy(input);
+	input: ReadOnly<Actual>,
+): input is Truthy<ReadOnly<Actual>> => !isFalsy(input);

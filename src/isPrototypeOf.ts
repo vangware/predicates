@@ -1,4 +1,4 @@
-import type { GenericConstructor, NonPrimitive } from "@vangware/types";
+import type { Class } from "@vangware/types";
 
 /**
  * Checks if given `input`'s prototype comes directly from given `constructor`.
@@ -15,6 +15,6 @@ import type { GenericConstructor, NonPrimitive } from "@vangware/types";
  * @returns Returns a curried function with `constructor` in context.
  */
 export const isPrototypeOf =
-	<Constructor extends GenericConstructor>({ prototype }: Constructor) =>
-	<Input extends NonPrimitive>(object: Input) =>
+	<Constructor extends Class>({ prototype }: Constructor) =>
+	<Input extends object>(object: Input) =>
 		prototype === Object.getPrototypeOf(object);
