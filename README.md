@@ -1,4 +1,4 @@
-<img alt="Vangware's Predicates" src="./logo.svg" height="128" />
+<img alt="Predicates by Vangware" src="./logo.svg" height="128" />
 
 ![Coverage][coverage-badge] ![License][license-badge]
 ![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]

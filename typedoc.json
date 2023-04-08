@@ -3,5 +3,5 @@
 	"cname": "predicates.vangware.com",
 	"extends": ["@vangware/configs/typedoc.json"],
 	"entryPoints": ["./src"],
-	"name": "@vangware/predicates"
+	"name": "Predicates by Vangware"
 }
