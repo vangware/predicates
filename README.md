@@ -7,21 +7,43 @@
 
 ## Usage
 
-This package can be installed as a dependency or used directly.
+### 📦 Node
 
-### Usage as ECMAScript module
+Install `@vangware/predicates` as a dependency:
 
-🦕 In JS or [deno][deno]:
+```bash
+pnpm add @vangware/predicates
+# or
+npm install @vangware/predicates
+# or
+yarn add @vangware/predicates
+```
 
-```js
-import { isBoolean } from "https://esm.sh/@vangware/predicates";
+Import it and use it:
+
+```typescript
+import { isBoolean } from "@vangware/predicates";
 
 isBoolean(true); // true
 isBoolean(false); // true
 isBoolean(undefined); // false
 ```
 
-🌎 Or in the browser:
+### 🦕 Deno
+
+Import `@vangware/predicates` using the `npm:` prefix, and use it directly:
+
+```typescript
+import { isBoolean } from "npm:@vangware/predicates";
+
+isBoolean(true); // true
+isBoolean(false); // true
+isBoolean(undefined); // false
+```
+
+### 🌎 Browser
+
+Import `@vangware/predicates` using [esm.sh][esm.sh], and use it directly:
 
 ```html
 <script type="module">
@@ -33,43 +55,11 @@ isBoolean(undefined); // false
 </script>
 ```
 
-### Usage with local installation
+## Useful links
 
-First:
-
-```bash
-# If you use npm
-npm install @vangware/predicates
-# If you use pnpm
-pnpm add @vangware/predicates
-# If you use yarn
-yarn add @vangware/predicates
-```
-
-And then:
-
-```js
-import { isBoolean } from "@vangware/predicates";
-
-isBoolean(true); // true
-isBoolean(false); // true
-isBoolean(undefined); // false
-```
-
-## Documentation
-
-Documentation is available [HERE][documentation]. It is auto-generated with
-[typedoc][typedoc] based on the JSDocs and the types in the source. It shouldn't
-be necessary to read this. Code editors like [VS Code][vscode] integrate the
-documentation in the UI.
-
-## Changelog
-
-Changelog can be found [HERE][changelog].
-
-## Test coverage
-
-Test coverage can be found [HERE][coverage].
+-   📝 [Documentation][documentation]: TypeDoc generated documentation.
+-   ⏳ [Changelog][changelog]: List of changes between versions.
+-   ✅ [Tests Coverage][coverage]: Coveralls page with tests coverage.
 
 <!-- Reference -->
 
@@ -77,13 +67,11 @@ Test coverage can be found [HERE][coverage].
 [coverage-badge]:
 	https://img.shields.io/coveralls/github/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/predicates
 [coverage]: https://coveralls.io/github/vangware/predicates
-[deno]: https://deno.land/
 [documentation]: https://predicates.vangware.com
+[esm.sh]: https://esm.sh
 [license-badge]:
 	https://img.shields.io/npm/l/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/predicates/blob/main/LICENSE
 [npm-version-badge]:
 	https://img.shields.io/npm/v/@vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://npm.im/@vangware/predicates
 [open-issues-badge]:
 	https://img.shields.io/github/issues/vangware/predicates.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/predicates/issues
-[typedoc]: https://typedoc.org/
-[vscode]: https://code.visualstudio.com/
