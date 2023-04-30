@@ -36,7 +36,7 @@ export default [
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			// eslint-disable-next-line prefer-regex-literals
 			isNumber(/expression/u) && isNumber(new RegExp("expression", "u")),
 		...wantedFalse,

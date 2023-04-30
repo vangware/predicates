@@ -5,7 +5,7 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 export default [
 	{
 		given: "a BigInt",
-		received:
+		received: () =>
 			isAsyncIterable(BigInt(1)) &&
 			isAsyncIterable(BigInt("1")) &&
 			isAsyncIterable(1n),
@@ -38,7 +38,7 @@ export default [
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			isAsyncIterable(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
 			isAsyncIterable(new RegExp("expression", "u")),
@@ -51,7 +51,7 @@ export default [
 	},
 	{
 		given: "a symbol",
-		received:
+		received: () =>
 			isAsyncIterable(Symbol("description")) &&
 			isAsyncIterable(Symbol(1)),
 		...wantedFalse,
