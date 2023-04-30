@@ -4,7 +4,7 @@ import { wantedFalse, wantedTrue } from "./wanted.js";
 
 export default [
 	{
-		given: "a safe interger",
+		given: "a safe integer",
 		received: () => isSafeInteger(1),
 		...wantedTrue,
 	},

@@ -36,9 +36,10 @@ export default [
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
+			isArray(/expression/u) &&
 			// eslint-disable-next-line prefer-regex-literals
-			isArray(/expression/u) && isArray(new RegExp("expression", "u")),
+			isArray(new RegExp("expression", "u")),
 		...wantedFalse,
 	},
 	{

@@ -35,7 +35,7 @@ export default [
 	},
 	{
 		given: "a regular expression",
-		received:
+		received: () =>
 			// eslint-disable-next-line prefer-regex-literals
 			isDate(/expression/u) && isDate(new RegExp("expression", "u")),
 		...wantedFalse,
