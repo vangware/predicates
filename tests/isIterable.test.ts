@@ -87,4 +87,4 @@ export default [
 		received: () => isIterable(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

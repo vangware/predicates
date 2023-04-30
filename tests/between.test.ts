@@ -80,4 +80,4 @@ export default [
 		received: () => between1AndNegative10(-11),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

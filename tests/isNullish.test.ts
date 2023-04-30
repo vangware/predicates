@@ -74,4 +74,4 @@ export default [
 		received: () => isNullish(undefined),
 		...wantedTrue,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

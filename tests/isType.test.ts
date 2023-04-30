@@ -60,4 +60,4 @@ export default [
 		received: () => isUndefined(undefined),
 		...wantedTrue,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

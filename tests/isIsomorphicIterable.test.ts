@@ -92,4 +92,4 @@ export default [
 		received: () => isIsomorphicIterable(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

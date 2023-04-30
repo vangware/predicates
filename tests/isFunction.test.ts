@@ -74,4 +74,4 @@ export default [
 		received: () => isFunction(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

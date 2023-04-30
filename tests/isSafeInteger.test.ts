@@ -23,4 +23,4 @@ export default [
 		received: () => isSafeInteger(-1.5),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

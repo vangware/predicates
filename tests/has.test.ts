@@ -75,4 +75,4 @@ export default [
 		received: () => has(number)(objectWithString),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

@@ -71,4 +71,4 @@ export default [
 		received: () => isSymbol(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

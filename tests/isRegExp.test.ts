@@ -72,4 +72,4 @@ export default [
 		received: () => isRegExp(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;
