@@ -90,4 +90,4 @@ export default [
 		received: () => isAsyncIterable(undefined),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

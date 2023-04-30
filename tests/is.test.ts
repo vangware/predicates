@@ -27,4 +27,4 @@ export default [
 		received: () => is([])([]),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

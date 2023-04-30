@@ -20,4 +20,4 @@ export default [
 		received: () => isPrototypeOfObject(/-/u),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

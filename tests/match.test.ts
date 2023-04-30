@@ -32,4 +32,4 @@ export default [
 		received: () => matchWithErrors("foo"),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

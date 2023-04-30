@@ -52,4 +52,4 @@ export default [
 		received: () => isPropertyOf({} as ReadOnlyRecord)(string),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

@@ -23,4 +23,4 @@ export default [
 		received: () => hasAsyncIteratorSymbol(array),
 		...wantedFalse,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

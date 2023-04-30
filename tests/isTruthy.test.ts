@@ -39,4 +39,4 @@ export default [
 		received: () => isTruthy(true),
 		...wantedTrue,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;

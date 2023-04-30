@@ -22,4 +22,4 @@ export default [
 		received: () => hasIteratorSymbol(array),
 		...wantedTrue,
 	},
-] as Tests<boolean>;
+] satisfies Tests<boolean>;
