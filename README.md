@@ -1,4 +1,6 @@
-# This repository's code was moved to [this monorepo](https://github.com/vangware/libraries/tree/main/packages/@vangware/predicates).
+> This repository's code was moved to [lou.codes](https://lou.codes).
+
+---
 
 <img alt="Predicates by Vangware" src="./logo.svg" height="128" />
 
